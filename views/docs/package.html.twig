@@ -1,0 +1,106 @@
+{% extends 'shared/docsLayout.html.twig' %}
+
+{% block title %}\Hyper\{{ model.name }}{% endblock %}
+
+{% set package = model %}
+
+{% block menu %}
+    {% include 'includes/api-menu.html.twig' %}
+{% endblock %}
+
+{% block body %}
+    <article class="docs-article" id="{{ package.name|lower }}">
+        <h2 class="section-heading">{{ package.name }} Package ({{ package.classes|length }})</h2>
+        <p>{{ package.description }}</p>
+        {% for key, class in package.classes %}
+            <section class="docs-section" id="{{ key + 1 }}">
+                <h3>
+                    <code>{{ key + 1 }}. {{ class.name }}</code>
+                    {% if class.deprecated %}
+                        <span class="badge badge-warning text-uppercase mx-1">deprecated</span>
+                    {% endif %}
+                </h3>
+
+                <p>{{ class.description|raw }}</p>
+
+                {% if class.properties %}
+                    <small>Properties</small>
+                    <div class="table-responsive my-4">
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Description</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for property in class.properties %}
+                                <tr>
+                                    <th class="theme-bg-light">
+                                        <span class="badge badge-primary text-uppercase mx-1">{{ property.access }}</span>
+                                        {% if property.deprecated %}
+                                            <span class="badge badge-warning text-uppercase mx-1">deprecated</span>
+                                        {% endif %}
+                                        {{ property.name }}
+                                    </th>
+                                    <td>{{ property.description|raw }}</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                {% endif %}
+
+                {% if class.methods %}
+                    <small>Methods</small>
+                    <div class="table-responsive my-4">
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th>Parameters</th>
+                                <th>Return</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for method in class.methods %}
+                                <tr>
+                                    <th class="theme-bg-light">
+                                        <span class="badge badge-accent text-uppercase mx-1">{{ method.access }}</span>
+                                        {% if method.deprecated %}
+                                            <span class="badge badge-warning text-uppercase mx-1">deprecated</span>
+                                        {% endif %}
+                                        {{ method.name }}
+                                    </th>
+                                    <td>{{ method.description|raw }}</td>
+                                    <td>
+                                        <ul>
+                                            {% for param in method.params %}
+                                                <li><span>{{ param }}</span></li>
+                                            {% endfor %}
+                                        </ul>
+                                    </td>
+                                    <td>{{ method.return }}</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                {% endif %}
+
+                {% if class.constants %}
+                    <small>Constants</small>
+                    <ul>
+                        {% for constant in class.constants %}
+                            <li>
+                                <code><b>{{ constant.name }}</b> <i> => '{{ constant.value }}'</i></code>
+                                <p>{{ constant.description|raw }}</p>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </section>
+        {% endfor %}
+    </article>
+{% endblock %}

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3a54eba3-a91c-4dc8-ad10-4d5bfb81813f" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution>
+      <executable path="composer" />
+    </execution>
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="NamedScopeManager">
+    <order>
+      <scope name="Hyper" />
+    </order>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.3">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/hyper/Routing" />
+      <path value="$PROJECT_DIR$/vendor/hyper/Notifications" />
+      <path value="$PROJECT_DIR$/vendor/twig/twig" />
+      <path value="$PROJECT_DIR$/vendor/hyper/Database" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/vendor/hyper/Reflection" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/hyper/Exception" />
+      <path value="$PROJECT_DIR$/vendor/hyper/Functions" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/hyper/Application" />
+      <path value="$PROJECT_DIR$/vendor/hyper/Models" />
+      <path value="$PROJECT_DIR$/vendor/funcphp/twig-compress" />
+      <path value="$PROJECT_DIR$/vendor/hyper/SQL" />
+      <path value="$PROJECT_DIR$/vendor/hyper/Builder" />
+      <path value="$PROJECT_DIR$/vendor/hyper/Manipulation" />
+      <path value="$PROJECT_DIR$/vendor/hyper/Syntax" />
+    </include_path>
+  </component>
+  <component name="ProjectId" id="1TJyLvh9ODn2MFcaJ3AooeczfCl" />
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.jetbrains.php.lang.actions.generation.PhpGenerateFieldAccessorHandlerBase$MyMemberChooser.fluent.setters.last.selected" value="true" />
+    <property name="com.jetbrains.php.phpunit.codeGeneration.PhpNewTestDialog.defaultLibrary" value="PHPUnit" />
+    <property name="dumpAutoload C:/Users/joe/PhpstormProjects/Hyper Dcs/composer.json" value="--no-interaction --ansi --verbose" />
+    <property name="dumpAutoload C:/Users/joe/PhpstormProjects/Hyper Docs/composer.json" value="--no-interaction --ansi --verbose --optimize" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/vendor/hyper" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="project.scopes" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\joe\PhpstormProjects\Hyper Docs\vendor\hyper\SQL" />
+      <recent name="C:\Users\joe\PhpstormProjects\Hyper Docs\views\docs" />
+      <recent name="C:\Users\joe\PhpstormProjects\Hyper Docs\views\home" />
+      <recent name="C:\Users\joe\PhpstormProjects\Hyper Docs\assets\images" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\joe\PhpstormProjects\Hyper Docs\vendor\hyper" />
+      <recent name="C:\Users\joe\PhpstormProjects\Hyper Docs\views\shared" />
+      <recent name="C:\Users\joe\PhpstormProjects\Hyper Docs\controllers" />
+      <recent name="C:\Users\joe\PhpstormProjects\Hyper Docs" />
+      <recent name="C:\Users\joe\PhpstormProjects\Hyper Dcs\vendor" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="PHP Built-in Web Server.Run">
+    <configuration name="QueryTest.testGetQuery" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Hyper\SQL\QueryTest" file="$PROJECT_DIR$/vendor/hyper/SQL/QueryTest.php" method="testGetQuery" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="QueryTest.test__construct" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Hyper\SQL\QueryTest" file="$PROJECT_DIR$/vendor/hyper/SQL/QueryTest.php" method="test__construct" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="QueryTest.test__toString" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Hyper\SQL\QueryTest" file="$PROJECT_DIR$/vendor/hyper/SQL/QueryTest.php" method="test__toString" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Run" type="PhpBuiltInWebServerConfigurationType" factoryName="PHP Built-in Web Server" document_root="$PROJECT_DIR$" port="3000">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHPUnit.QueryTest.test__construct" />
+        <item itemvalue="PHPUnit.QueryTest.test__toString" />
+        <item itemvalue="PHPUnit.QueryTest.testGetQuery" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3a54eba3-a91c-4dc8-ad10-4d5bfb81813f" name="Default Changelist" comment="" />
+      <created>1573192440167</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1573192440167</updated>
+      <workItem from="1573192441369" duration="1043000" />
+      <workItem from="1573200122375" duration="15068000" />
+      <workItem from="1573222189603" duration="4875000" />
+      <workItem from="1573270383612" duration="5317000" />
+      <workItem from="1573295573972" duration="378000" />
+      <workItem from="1573297653522" duration="17508000" />
+      <workItem from="1573315255297" duration="34000" />
+      <workItem from="1573315318019" duration="9710000" />
+      <workItem from="1573367227080" duration="2508000" />
+      <workItem from="1573379941414" duration="3166000" />
+      <workItem from="1573398787531" duration="18238000" />
+      <workItem from="1573418824141" duration="2781000" />
+      <workItem from="1573421650271" duration="2358000" />
+      <workItem from="1573449224971" duration="1672000" />
+      <workItem from="1573460444418" duration="4457000" />
+      <workItem from="1573469251167" duration="810000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+</project>

@@ -1,0 +1,67 @@
+<article class="docs-article" id="installation">
+    <header class="docs-header">
+        <h1 class="docs-heading">Installation</h1>
+        <section class="docs-intro">
+            <p>Installing hyper won't take much of your time, so lets dive into it straight away.</p>
+        </section><!--//docs-intro-->
+    </header>
+    <section class="docs-section" id="downloading">
+        <h2 class="section-heading">Downloading & installing</h2>
+        <p>You can download hyper straight from this <a href="{{ asset('downloads/hyper-release-boilerplate.zip') }}">link</a>
+            or from our <a href="https://github/joecharika/hyper">git repo</a>.</p>
+        <p>Installing:</p>
+        <ol>
+            <li>Unzip the <code>hyper-release-boilerplate.zip</code></li>
+            <li>Copy the <code>hyper/</code> folder to your project folder, paste inside
+                <code>{{ '<project-folder>'|escape }}/vendor/</code> if you're using composer
+            </li>
+            <li>
+                <p>Verify the files</p>
+                <ul>
+                    <li>
+                        {{ '<project-root>'|escape }}/
+                        <ul>
+                            <li>assets/</li>
+                            <li>controllers/</li>
+                            <li>models/</li>
+                            <li>vendor/</li>
+                            <li>views/</li>
+                            <li>composer.json</li>
+                            <li>index.php</li>
+                            <li>web.hyper.json</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ol>
+    </section><!--//section-->
+
+    <section class="docs-section" id="setup-composer">
+        <h2 class="section-heading">New project</h2>
+        <p>Lets get started with <code>composer</code> for running our project</p>
+        <p></p>
+    </section><!--//section-->
+
+    <section class="docs-section" id="setup-without-composer">
+        <h2 class="section-heading">Setup without composer</h2>
+        <div class="callout-block callout-block-danger mr-1">
+            <div class="content">
+                <h4 class="callout-title">
+                    <span class="callout-icon-holder">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </span>
+                    <!--//icon-holder-->
+                    NOT RECOMMENDED
+                </h4>
+                <p>Using direct inclusion can cause problems with class loading, therefore it is recommended to use
+                    composer for auto-loading. Go the <a class="scrollTo" href="#setup-composer">composer</a> way </p>
+            </div>
+            <!--//content-->
+        </div>
+        <p>Vivamus efficitur fringilla ullamcorper. Cras condimentum condimentum mauris, vitae facilisis leo. Aliquam
+            sagittis purus nisi, at commodo augue convallis id. Sed interdum turpis quis felis bibendum imperdiet.
+            Mauris pellentesque urna eu leo gravida iaculis. In fringilla odio in felis ultricies porttitor. Donec at
+            purus libero. Vestibulum libero orci, commodo nec arcu sit amet, commodo sollicitudin est. Vestibulum
+            ultricies malesuada tempor.</p>
+    </section><!--//section-->
+</article><!--//docs-article-->

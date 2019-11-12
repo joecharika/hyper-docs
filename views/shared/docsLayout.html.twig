@@ -1,0 +1,164 @@
+{% compress %}
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <title>{% block title %}{% endblock %} - hyperDocs</title>
+
+        <!-- Meta -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="PHP MVC Framework">
+        <meta name="keywords" content="php,framework,hyper,mvc">
+        <meta name="author" content="Hyper Team, Starlight">
+        <link rel="shortcut icon" href="/favicon.ico">
+
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet">
+
+        <!-- FontAwesome JS-->
+        <script defer src="/assets/fontawesome/js/all.min.js"></script>
+
+        <!-- Theme CSS -->
+        <link id="theme-style" rel="stylesheet" href="/assets/css/theme.css">
+
+        <!-- Plugins CSS -->
+        <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.2/styles/atom-one-dark.min.css">
+
+
+        {% block styles %}{% endblock %}
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="/assets/css/style.css">
+
+    </head>
+
+    <body>
+    <header class="header fixed-top">
+        <div class="branding docs-branding">
+            <div class="container-fluid position-relative py-2">
+                <div class="docs-logo-wrapper">
+                    <div class="site-logo">
+                        <a class="navbar-brand" href="/">
+                            <img class="logo-icon mr-2" src="/assets/images/icon.png" alt="logo">
+                            <span class="logo-text">hyper<span class="text-alt">docs</span></span>
+                        </a>
+                    </div>
+                </div>
+                <!--//docs-logo-wrapper-->
+                <div class="docs-top-utilities d-flex justify-content-end align-items-center">
+                    <div class="top-search-box d-none d-lg-flex">
+                        <form class="search-form">
+                            <input type="text" placeholder="Search the docs..." name="search"
+                                   class="form-control search-input">
+                            <button type="submit" class="btn search-btn" value="Search">
+                                <svg class="svg-inline--fa fa-search fa-w-16" aria-hidden="true" focusable="false"
+                                     data-prefix="fas" data-icon="search" role="img" xmlns="http://www.w3.org/2000/svg"
+                                     viewBox="0 0 512 512" data-fa-i2svg="">
+                                    <path fill="currentColor"
+                                          d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path>
+                                </svg><!-- <i class="fas fa-search"></i> --></button>
+                        </form>
+                    </div>
+                    <ul class="social-list list-inline mx-md-3 mx-lg-5 mb-0 d-none d-lg-flex">
+                        <li class="list-inline-item"><a href="#"><i class="fab fa-github fa-fw"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fab fa-twitter fa-fw"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fab fa-slack fa-fw"></i></a></li>
+                        <li class="list-inline-item"><a href="#"><i class="fab fa-product-hunt fa-fw"></i></a></li>
+                    </ul><!--//social-list-->
+                    <a href="{{ asset('downloads/hyper-1.0.5.zip') }}"
+                       class="btn btn-primary d-none d-lg-flex">Download</a>
+                </div><!--//docs-top-utilities-->
+            </div><!--//container-->
+        </div><!--//branding-->
+    </header><!--//header-->
+
+    <div class="docs-wrapper">
+        <div id="docs-sidebar" class="docs-sidebar">
+            <div class="top-search-box d-lg-none p-3">
+                <form class="search-form">
+                    <input type="text" placeholder="Search the docs..." name="search" class="form-control search-input">
+                    <button type="submit" class="btn search-btn" value="Search"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+            <nav id="docs-nav" class="docs-nav navbar">
+                <ul class="section-items list-unstyled nav flex-column pb-3">
+                    <li class="nav-item section-title">
+                        <a class="nav-link scrollto active" href="/docs">
+                            <span class="theme-icon-holder mr-2"><i class="fas fa-map-signs"></i></span>
+                            Main documentation
+                        </a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="/docs#introduction">Introduction</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/docs#installation">Installation</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/docs#apis">APIs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/docs#integrations">Integrations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/docs#utilities">Utilities</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/docs#web">Web</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/docs#deployment">Deployment</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/docs#examples">Examples</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/docs#faqs">FAQs</a></li>
+                    {% block menu %}{% endblock %}
+                </ul>
+
+            </nav><!--//docs-nav-->
+        </div><!--//docs-sidebar-->
+        <div class="docs-content">
+            <div class="container">
+
+                <div class="callout-block callout-block-warning mr-1">
+                    <div class="content">
+                        <h4 class="callout-title">
+                            <span class="callout-icon-holder"><i class="fas fa-exclamation-triangle"></i></span>
+                            <!--//icon-holder-->
+                            Unofficial release note
+                        </h4>
+                        <p>
+                            The current version of <code>hyper</code> is a beta release so note that some things may
+                            break and your
+                            feedback for such would be greatly appreciated. Happy coding!!!
+                        </p>
+                    </div>
+                    <!--//content-->
+                </div>
+
+                {% block body %}{% endblock %}
+
+                <footer class="footer">
+                    <div class="container text-center py-5">
+                        <small class="copyright">HyperPHP Copyright &copy; <a href="https://starlight.co.zw/"
+                                                                              target="_blank">Starlight</a>, <a
+                                    href="https://hyper.com/" target="_blank">Hyper</a></small>
+                        <ul class="social-list list-unstyled pt-4 mb-0">
+                            <li class="list-inline-item"><a href="#"><i class="fab fa-github fa-fw"></i></a></li>
+                            <li class="list-inline-item"><a href="#"><i class="fab fa-twitter fa-fw"></i></a></li>
+                            <li class="list-inline-item"><a href="#"><i class="fab fa-slack fa-fw"></i></a></li>
+                            <li class="list-inline-item"><a href="#"><i class="fab fa-product-hunt fa-fw"></i></a></li>
+                            <li class="list-inline-item"><a href="#"><i class="fab fa-facebook-f fa-fw"></i></a></li>
+                            <li class="list-inline-item"><a href="#"><i class="fab fa-instagram fa-fw"></i></a></li>
+                        </ul><!--//social-list-->
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div><!--//docs-wrapper-->
+
+    <!-- Javascript -->
+    <script src="/assets/plugins/jquery-3.4.1.min.js"></script>
+    <script src="/assets/plugins/popper.min.js"></script>
+    <script src="/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Page Specific JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/highlight.min.js"></script>
+    <script src="/assets/js/highlight-custom.js"></script>
+    <script src="/assets/plugins/jquery.scrollTo.min.js"></script>
+    <script src="/assets/plugins/lightbox/dist/ekko-lightbox.min.js"></script>
+    <script src="/assets/js/docs.js"></script>
+    {% block scripts %}{% endblock %}
+
+    </body>
+    </html>
+
+{% endcompress %}
+

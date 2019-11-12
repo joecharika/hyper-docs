@@ -1,0 +1,13 @@
+<li class="nav-item section-title mt-3">
+    <a class="nav-link scrollto" href="#apis">
+        <span class="theme-icon-holder mr-2">
+            <i class="fas fa-box"></i>
+        </span>
+        APIs
+    </a>
+</li>
+
+{% for package in packages %}
+    <li class="nav-item"><a class="nav-link {{ package|lower == model.name|lower ? 'active' : '' }}"
+                            href="/docs/api/{{ package|lower }}">{{ package }}</a></li>
+{% endfor %}
