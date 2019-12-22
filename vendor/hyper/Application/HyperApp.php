@@ -3,11 +3,16 @@
 namespace Hyper\Application;
 
 use Hyper\Database\DatabaseConfig;
-use Hyper\Exception\{ActionNotFoundException, ControllerNotFoundException, HyperException, HyperHttpException};
+use Hyper\Http\Request;
+use Hyper\Exception\{HyperError, HyperException, HyperHttpException};
+use Hyper\Functions\Logger;
+use Hyper\Functions\Str;
+use Hyper\Http\Cookie;
+use Hyper\Http\StatusCode;
 use Hyper\Models\User;
 use Hyper\Reflection\Annotation;
-use Hyper\Routing\{Route, Router};
-use Hyper\ViewEngine\Html;
+use Hyper\Routing\{Route};
+use Hyper\Utils\General;
 use function array_search;
 use function explode;
 use function file_exists;
@@ -20,177 +25,283 @@ use function uniqid;
  */
 class HyperApp
 {
-    /**
-     * Name of application
-     * @var string
-     */
-    public static $name = 'HyperApp';
+    use HyperError; #TODO: HyperWeb,HyperApi, HyperOAuth;
 
-    /**
-     * Available routes
-     * @var array<Route>
-     */
-    public static $routes;
-    /**
-     * Current route
-     * @var Route
-     */
-    public static $route;
-
+    #region Properties
     /**
      * Signed-in user
      * @var User
      */
     public static $user;
-
     /**
      * Current debug state
      * @var bool
      */
     public static $debug = true;
-
     /**
      * Database configuration object
      * @var DatabaseConfig
      */
     public static $dbConfig;
-
+    /**
+     * Temporary static app storage,
+     * @var array
+     */
+    public static $storage = [];
+    /**
+     * @var HyperApp
+     */
+    protected static $instance;
+    /**
+     * Name of application
+     * @var string
+     */
+    public $name = 'HyperApp';
+    /**
+     * Available routes
+     * @var Route[]
+     */
+    public $routes;
     /**
      * Event hooks
      * @var HyperEventHook|null
      */
-    public static $eventHook;
+    public $eventHook;
+
+    #endregion
+
+    #region Init
 
     /**
      * HyperApp constructor.
      * @param string $name The name of your application
-     * @param string $routingMode The method of routing used in your application. Default: auto
      * @param bool $usesAuth
      * @param HyperEventHook|null $eventsHook
      */
-    public function __construct(string $name, string $routingMode = 'auto', $usesAuth = false, HyperEventHook $eventsHook = null)
+    public function __construct(string $name, $usesAuth = false, HyperEventHook $eventsHook = null)
     {
-        #initialize the event hook first
-        self::$eventHook = $eventsHook;
+        # Set the application instance for global access
+        self::$instance = $this;
 
-        #Emit HyperEventHook::onBoot event
-        $this->emitEvent(HyperEventHook::boot, 'Application is ready to start.');
+        $this->ddos();
 
-        #Initialize app data
+        # initialize the event hook first
+        $this->eventHook = $eventsHook;
+
+        # Emit HyperEventHook::onBoot event => booting starting
+        $this->event(
+            HyperEventHook::boot,
+            'Application is ready to start'
+        );
+
+        # Initialize app data
         HyperApp::$debug = self::config()->debug;
         HyperApp::$dbConfig = new DatabaseConfig();
-        HyperApp::$name = $name;
-        HyperApp::$routes = Router::create($routingMode);
-        if ($usesAuth) HyperApp::$user = (new Authorization())->getSession()->user;
-        $this->emitEvent(HyperEventHook::booted, 'Application has been initialised successfully');
-        $this->run(HyperApp::$routes);
+        $this->name = $name ?? $this->name;
+
+        # Clear last request queries
+        Logger::log('', '__INIT__', 'LAST_REQUEST_QUERY', 'w');
+
+        # Initialize authentication if required
+        HyperApp::$user = $usesAuth
+            ? (new Authorization())->getSession()->user
+            : new User;
+
+        # Emit HyperEventHook::onBooted event => booting completed
+        $this->event(
+            HyperEventHook::booted,
+            'Application has been initialised successfully'
+        );
+
+        # Run application
+        $this->run();
+    }
+
+    protected function ddos()
+    {
+        $config = self::config();
+        $ipAddress = General::ipAddress();
+
+        if ($config->limitRequests && $ipAddress) {
+            $cookie = new Cookie;
+            $ddosKey = '__hyper-piXhjs984Mhfo::f8Hdksm';
+            $ddosKeyPair = $cookie->getCookie($ddosKey);
+
+            if (Str::endsWith($ddosKeyPair, '.010')) {
+                $cookie->removeCookie($ddosKey);
+                header('refresh:7;url=' . Request::url(), false, StatusCode::TOO_MANY_REQUESTS);
+                self::error(new HyperException(
+                    'Your consistence is amazing, but lets take a break...',
+                    StatusCode::TOO_MANY_REQUESTS
+                ));
+            } else {
+                $cookie->addCookie(
+                    $ddosKey,
+                    hash('gost-crypto', $ipAddress) . '.0' . ((int)substr($ddosKeyPair, -2) + 1),
+                    time() + 10,
+                    '/'
+                );
+            }
+        }
+    }
+    #endregion
+
+    /**
+     * Get configuration object from specified file
+     * @param string $file default => 'hyper.config.json'
+     * @return object|null
+     */
+    public static function config($file = 'hyper.config.json')
+    {
+        #If config file was not found return default config
+        if (!file_exists($file) || !isset($file))
+            return (object)[
+                'debug' => true,
+                'limitRequests' => true,
+                'errors' => (object)[
+                    'defaultPath' => 'shared/error.html.twig',
+                    'custom' => (object)[]
+                ],
+                'reportLink' => null
+            ];
+
+        #Else return the config from config file
+        return (object)json_decode(file_get_contents($file));
     }
 
     /**
      * Trigger an event
-     *
      * @param string $event Name od the event
      * @param mixed|null $data Data to pass to the event
      * @return void
      */
-    public static function emitEvent(string $event, $data = null): void
+    public static function event(string $event, $data = null): void
     {
-        if (isset(self::$eventHook)) self::$eventHook->emit($event, $data);
+        $instance = HyperApp::instance();
+        if (!isset($instance->eventHook))
+            $instance->eventHook = new HyperEventHook([]);
+
+        $instance->eventHook->emit($event, $data);
     }
 
     /**
-     * Get configuration object from specified file
-     *
-     * @param string $file default => "web.hyper.json"
-     * @return object
+     * Get application instance
+     * @return HyperApp
      */
-    public static function config($file = "web.hyper.json"): object
+    public static function instance(): HyperApp
     {
-        if (!file_exists($file)) (new HyperException("Configuration file not found", "701"))->throw();
-        $text = file_get_contents($file);
-        return (object)json_decode($text);
+        return self::$instance;
     }
 
-    /**
-     * @param array $routes
-     */
-    private function run(array $routes)
-    {
+    #region Application Types
 
+    protected function run()
+    {
         /** @var Route $route */
-        $route = null;
+        $route = Request::$route =
+            new Route(
+                Request::route()->action,
+                Request::route()->controller,
+                Request::path(),
+                uniqid()
+            );
 
-        foreach ($routes as $tempRoute) {
-            if (Route::match($tempRoute)) {
-                $route = Request::$route = HyperApp::$route = $tempRoute;
+        switch ($route->realController) {
+            case 'api':
+                $this->api($route);
                 break;
-            }
+            case 'oauth':
+                $this->oauth($route);
+                break;
+            case 'bot':
+                $this->bot($route);
+                break;
+            case 'config':
+                $this->configUI();
+                break;
+            default:
+                $this->web($route);
         }
+    }
 
-        if (!isset($route))
-            $route = Request::$route = HyperApp::$route =
-                new Route(
-                    Request::params()->action,
-                    '\\Controllers\\' . Request::params()->controller . 'Controller',
-                    Request::path(),
-                    uniqid(),
-                );
+    protected function api(Route $route)
+    {
+        self::error('Api is not available');
+    }
 
+    protected function oauth(Route $route)
+    {
+        self::error('OAuth is not available');
+    }
 
+    protected function bot(Route $route)
+    {
+        self::error('Bot is not available');
+    }
+
+    protected function configUI()
+    {
+        self::error('Configuration UI is not available');
+    }
+
+    /**
+     * @param Route $route
+     */
+    protected function web(Route $route): void
+    {
         $ext = Request::isPost() ? 'post' : 'get';
         $route->action = Request::isPost() ? $ext . $route->action : $route->action;
 
-        if (file_exists($_SERVER['DOCUMENT_ROOT'] . "$route->controller.php")) {
+        if (class_exists($route->controller)) {
 
-            if (method_exists($route->controller, $ext . HyperApp::$route->action) || method_exists($route->controller,
-                    HyperApp::$route->action)) {
-                $this->renderAction($route);
+            if (method_exists($route->controller, $ext . Request::$route->action) || method_exists($route->controller,
+                    Request::$route->action)) {
+                if ($this->validate($route)) {
+                    $action = $route->action;
+                    echo (new $route->controller())->$action();
+                } else
+                    Request::redirectTo('login', 'auth', null, null, ['return' => Request::path()]);
+
             } else
-                (new HyperHttpException)->notFound(((new ActionNotFoundException)->message . Html::break() . Html::bold(" ( $route->controller -> $route->action ) ",
-                        ['style' => 'color:red'])));
+                self::error(
+                    HyperHttpException::notFound("Controller action <span style='color: red'>( $route->controller::$route->action )</span> not found")
+                );
         } else
-            (new HyperHttpException)->notFound(((new ControllerNotFoundException)->message . Html::break() . Html::bold(" ( $route->controller ) ",
-                    ['style' => 'color:red'])));
+            self::error(
+                HyperHttpException::notFound("Controller <span style='color: red'>( $route->controller )</span> not found")
+            );
     }
 
     /**
+     * Validate route against user auth status
      * @param $route
+     * @return bool
      */
-    private function renderAction($route)
+    protected function validate($route)
     {
-        #region Init
-
+        # Initialize validators
         $action = $route->action;
         $controller = $route->controller;
         $controllerAllowedRoles = Annotation::getClassAnnotation($controller, 'Authorize');
         $actionAllowedRoles = Annotation::getMethodAnnotation($controller, $action, 'Authorize');
 
-        #endregion
-
-        if (!isset($actionAllowedRoles) && !isset($controllerAllowedRoles)) {
-            (new $controller())->$action();
-        } else {
+        # Validate request
+        if (!isset($actionAllowedRoles) && !isset($controllerAllowedRoles))
+            return true;
+        else {
             $roles = isset($actionAllowedRoles)
                 ? explode('|', $actionAllowedRoles)
                 : (!isset($controllerAllowedRoles) ? [] : explode('|', $controllerAllowedRoles));
 
-            if ($this->checkAuth($roles))
-                (new $controller)->$action();
-            else
-                Request::redirectTo('login', 'auth');
+            if ($roles == [true])
+                if (User::isAuthenticated())
+                    return true;
+
+            if (array_search(isset(self::$user) ? self::$user->role : User::getRole(), $roles) !== false)
+                return true;
         }
+        return false;
     }
 
-    /**
-     * @param $roles
-     * @return bool
-     */
-    private function checkAuth($roles)
-    {
-        if (array_search(User::getRole(), $roles) === false) {
-            return false;
-        }
-
-        return true;
-    }
+    #endregion
 }

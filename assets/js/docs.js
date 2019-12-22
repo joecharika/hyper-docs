@@ -40,11 +40,11 @@ $(document).ready(function () {
 
     /* ===== Smooth scrolling ====== */
     $('a.scrollto').on('click', function (e) {
-		e.preventDefault();
+        e.preventDefault();
 
         //store hash
         var target = this.hash;
-		history.pushState('', document.title, target);
+        history.pushState('', document.title, target);
         $('body').scrollTo(target, 800, {offset: -69, 'axis': 'y'});
 
         //Collapse sidebar after clicking
@@ -70,4 +70,11 @@ $(document).ready(function () {
         $(this).ekkoLightbox();
     });
 
-});
+    $('[tooltip]').tooltip({
+        title: function () {
+            return $(this).attr('tooltip')
+        }
+    });
+
+})
+;

@@ -4,8 +4,7 @@
 namespace Controllers;
 
 
-use Hyper\Application\Controller;
-use Hyper\Exception\HyperException;
+use Hyper\Controllers\Controller;
 
 /**
  * Class HomeController
@@ -20,7 +19,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        self::view('home.index');
+        return $this->view('home.index');
     }
 
     /**
@@ -29,6 +28,6 @@ class HomeController extends Controller
      */
     public function docs()
     {
-        (new DocsController)->index();
+        return (new DocsController)->index();
     }
 }

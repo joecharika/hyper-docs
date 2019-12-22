@@ -1,0 +1,14 @@
+{
+  "db": {
+    "host": "localhost",
+    "database": "starligh_hyper_docs_db",
+    "username": "starligh_hyper_docs_user",
+    "password": "dgUdghzx940upX"
+  },
+  "debug": false,
+  "limitRequests": true,
+  "errors": {
+    "default": "shared/error.html.twig",
+    "custom": {}
+  }
+}

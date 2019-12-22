@@ -5,14 +5,10 @@ namespace Hyper\Database;
 
 
 use Hyper\Exception\HyperException;
-use Hyper\Exception\NullValueException;
-use Hyper\Functions\Debug;
 use PDOException;
 
 trait CRUDQuery
 {
-    use Query, ListQuery, ObjectQuery, FileHandler;
-
     #region Create
 
     /**
@@ -49,68 +45,7 @@ trait CRUDQuery
     #endregion
 
     #region Update
-    /**
-     * UPDATE table entity
-     * @param object $entity The entity to update with the new values
-     * @return bool Whether the update was successful or not
-     */
-    public function update($entity): bool
-    {
-        $id = $entity->id;
 
-        $newEntity = new $this->table;
-
-        foreach ((array)$entity as $key => $value) {
-            if (array_search($key, $this->foreignKeys()) === false) {
-                $newEntity->$key = $value;
-            }
-        }
-
-        $entity = $newEntity;
-
-        if (!isset($id)) (new NullValueException)->throw("Entity does not have an ID");
-
-        $entity->updatedAt = date('Y-m-d h:m:s');
-        $entity = $this->uploads((array)$entity);
-
-        $valuesParams = [];
-        $update = [];
-
-        foreach ($entity as $column => $value) {
-            if ($column !== 'id') {
-                array_push($valuesParams, "`$column`=:$column");
-                $update[$column] = $value;
-            }
-        }
-
-        $valuesString = implode(", ", $valuesParams);
-        $id = $this->db->quote($id);
-
-        return $this->query("UPDATE `$this->tableName` SET $valuesString WHERE `id`=$id", $update);
-    }
-
-
-    public function updateWhere($column, $operator, $value, $values)
-    {
-        $valuesParams = [];
-
-        foreach ($values as $col => $val) {
-            array_push($valuesParams, "`$col`=:$col");
-        }
-
-        $valuesString = implode(", ", $valuesParams);
-
-        return $this->query(
-            "UPDATE `$this->tableName` SET $valuesString WHERE `$column`$operator'$value'",
-            $values,
-            true
-        )
-            ->rowCount();
-
-    }
-    #endregion
-
-    #region Delete
     /**
      * Delete an object from this context by its id
      *
@@ -142,6 +77,10 @@ trait CRUDQuery
             return $q->rowCount();
         }
     }
+    #endregion
+
+    #region Delete
+
 
     /**
      * Delete the given object from this context
@@ -163,6 +102,25 @@ trait CRUDQuery
                 ["table" => $this->tableName], true);
             return $q->rowCount();
         }
+    }
+
+    public function updateWhere($column, $operator, $value, $values)
+    {
+        $valuesParams = [];
+
+        foreach ($values as $col => $val) {
+            array_push($valuesParams, "`$col`=:$col");
+        }
+
+        $valuesString = implode(", ", $valuesParams);
+
+        return $this->query(
+            "UPDATE `$this->tableName` SET $valuesString WHERE `$column`$operator'$value'",
+            $values,
+            true
+        )
+            ->rowCount();
+
     }
 
     /**

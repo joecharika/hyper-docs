@@ -3,6 +3,8 @@
 namespace Hyper\Functions;
 
 
+use function implode;
+
 abstract class Arr
 {
     use Cast;
@@ -29,6 +31,6 @@ abstract class Arr
             $array = $temp;
         }
 
-        return \implode($separator, $array);
+        return implode($separator, $array);
     }
 }

@@ -5,3 +5,13 @@
     color: #fff;
     background-color: #70009c;
 }
+.known-guy{
+    object-fit: cover;
+    background: #eee;
+    width: 100px;
+    height: 100px;
+}
+
+code {
+    display: inline-block;
+}

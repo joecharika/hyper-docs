@@ -3,6 +3,7 @@
 namespace Hyper\Functions;
 
 
+use Hyper\Exception\HyperError;
 use Hyper\Exception\HyperException;
 use function class_exists;
 use function get_class_vars;
@@ -11,11 +12,12 @@ use function property_exists;
 /**
  * Class Obj
  * @package Hyper\Functions
- * @method static toInstance(string $className, array|object $entity){}
+ * @method static toInstance(string $className, array|object $entity)
  */
 abstract class Obj
 {
-    use Cast;
+    use Cast, HyperError;
+
     /**
      * Get a value from class/object of key that you're not sure exists
      *
@@ -39,7 +41,7 @@ abstract class Obj
      */
     public static function properties(string $class): array
     {
-        if (!class_exists($class)) (new HyperException)->throw("Class $class does not exist");
+        if (!class_exists($class)) self::error(new HyperException("Class $class does not exist"));
         return get_class_vars($class);
     }
 }

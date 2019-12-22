@@ -25,7 +25,7 @@ class Router
     public static function create(string $routingMode = 'auto', $routes = []): array
     {
         #Emit HyperEventHook::onRoutingStarting event
-        HyperApp::emitEvent(HyperEventHook::routingStarting);
+        HyperApp::event(HyperEventHook::routingStarting);
 
         #region Init
         $autoRoutes = [];
@@ -83,7 +83,7 @@ class Router
         #endregion
 
         #Emit HyperEventHook::onRoutingCompleted event
-        HyperApp::emitEvent(HyperEventHook::routingCompleted);
+        HyperApp::event(HyperEventHook::routingCompleted);
 
         return array_unique($routes);
     }

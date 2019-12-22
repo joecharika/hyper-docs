@@ -1,6 +1,6 @@
 <?php
 /**
- * hyper v1.0.0-beta.2 (https://hyper.com/php)
+ * Hyper v1.0.2-beta.2 (https://hyper.starlight.co.zw)
  * Copyright (c) 2019. J.Charika
  * Licensed under MIT (https://github.com/joecharika/hyper/master/LICENSE)
  */
@@ -8,98 +8,103 @@
 namespace Hyper\Application;
 
 
-use DateInterval;
-use DateTime;
-use Exception;
 use Hyper\Database\DatabaseContext;
-use Hyper\Functions\Arr;
-use Hyper\Functions\Debug;
-use Hyper\Models\User;
+use Hyper\Functions\{Obj};
+use Hyper\Http\Cookie;
+use Hyper\Models\{Claim, User};
+use Hyper\Utils\{General, Generator};
 
 /**
  * Class Authorization
- * @package hyper\Application
+ * @package Hyper\Application
  */
 class Authorization
 {
     /** @var string $token */
-    public $token;
+    private $token;
 
     /** @var User */
-    public $user;
+    private $user;
 
     /** @var DatabaseContext */
-    private $db;
+    private $claims;
 
-    /**
-     * @var string
-     */
-    private $cryptoAlgorithm = "whirlpool";
+    /** @var DatabaseContext */
+    private $users;
+
+    /** @var string */
+    private $cryptoAlgorithm = 'whirlpool';
+
+    /** @var Cookie */
+    private $cookie;
 
     /**
      * Authorization constructor.
      */
     public function __construct()
     {
-        $this->db = new DatabaseContext('user');
+        $this->users = new DatabaseContext('user');
+        $this->claims = new DatabaseContext('claim');
+        $this->cookie = new Cookie();
 
-        if (session_status() !== 2) session_start();
-
-        $this->restoreSession();
+        ['token' => $this->token, 'user' => $this->user] = (array)$this->getSession();
     }
 
     /**
-     *
+     * @return object|NULL
      */
-    private function restoreSession()
+    public function getSession()
     {
-        $this->user = $this->getSession()->user;
-        $this->token = $this->getSession()->token;
-    }
+        if (isset($this->token) && isset($this->user)) {
+            $token = $this->token;
+            $user = $this->user;
+        } else {
+            $token = $this->token = $this->cookie->getCookie('__user');
 
-    /**
-     * @return object
-     */
-    public function getSession(): object
-    {
-        if (session_status() !== 2) return null;
+            /** @var Claim $claim */
+            $claim = empty($token) ? null : $this->claims->first('token', $token);
+
+            # Session deleted remotely or has expired
+            if (!isset($claim)) {
+                $this->cookie->removeCookie('__user');
+                return (object)[
+                    'token' => null,
+                    'user' => null,
+                ];
+            }
+
+            if (empty(HyperApp::$storage['userClaim']))
+                HyperApp::$storage['userClaim'] = $claim;
+
+            HyperApp::$user = $user = $this->user = Obj::property($claim, 'user',
+                $this->users->first('id', $claim->userId ?? ''));
+        }
 
         return (object)[
-            'id' => session_id(),
-            'token' => $this->token,
-            'user' => $this->db->firstById(Arr::key($_SESSION, 'user', 0)),
-            'expiryDate' => $this->getExpiryDate(),
+            'token' => $token,
+            'user' => $user
         ];
     }
 
     /**
-     * @return DateTime|false|null
+     * @return User|null
      */
-    public function getExpiryDate()
+    public function getUser()
     {
-        try {
-            return date_add(new DateTime(), new DateInterval(session_cache_expire()));
-        } catch (Exception $exc) {
-            return null;
-        }
+        return $this->user;
     }
 
     /**
      * Logout currently logged in user
+     * @return bool
      */
-    public function logout()
+    public function logout(): bool
     {
         $this->user = null;
-        $this->destroySession();
-    }
+        @HyperApp::$storage['userClaim']->state = 0;
 
-    /**
-     * Destroy user session
-     */
-    private function destroySession()
-    {
-        unset($_SESSION['user']);
-        if (session_start() === 2) session_destroy();
+        return $this->cookie->removeCookie('__user')
+            && $this->claims->delete(HyperApp::$storage['userClaim']);
     }
 
     /**
@@ -112,13 +117,11 @@ class Authorization
     public function register(string $username, string $password, $role = 'default')
     {
         $user = new User($username);
-        $exists = $this->db->firstWhere('username', '=', $username);
+        $exists = $this->users->first('username', $username);
 
+        if (isset($exists)) return "Username '$username' is already taken";
 
-        if (isset($exists))
-            return "Username '$username' is already taken";
-
-        if (strlen($password) < 9) return 'Password must be at least 8 characters long';
+        if (strlen($password) < 8) return 'Password must be at least 8 characters long';
 
         $user->id = uniqid();
         $user->salt = uniqid();
@@ -126,7 +129,7 @@ class Authorization
         $user->name = $username;
         $user->role = $role;
 
-        if ($this->db->insert($user))
+        if ($this->users->add($user))
             return $this->login($username, $password);
 
         return 'Registration failed';
@@ -140,8 +143,7 @@ class Authorization
      */
     public function encrypt(string $password, $salt = null): string
     {
-        $salt = isset($salt) ? $salt : uniqid();
-        return hash_pbkdf2($this->cryptoAlgorithm, $password, $salt, 7);
+        return hash_pbkdf2($this->cryptoAlgorithm, $password, $salt ?? uniqid(), 7);
     }
 
     /**
@@ -153,15 +155,14 @@ class Authorization
     public function login(string $username, string $password)
     {
         #Get user from the database
-        $this->user = $this->db->first(function ($user) use ($username) {
-            return $user->username === $username;
-        });
+        $this->user = $this->users->first('username', $username);
 
         if (isset($this->user)) {
+            if ($this->user->lockedOut) return 'Your account has been disabled. Contact admin for more';
             if ($this->user->key === $this->encrypt($password, $this->user->salt)) {
                 if ($this->createSession($this->user))
                     return HyperApp::$user = $this->user;
-            } else return 'Password is incorrect or has not been created yet';
+            } else return 'Password is incorrect';
         }
 
         return 'User is not registered';
@@ -174,41 +175,26 @@ class Authorization
      */
     private function createSession(User $user): bool
     {
-        #Update user information
-        $user->lastLoginIP = $this->getIPAddress();
-        $user->lastLoginDate = date('Y-m-d h:m:s');
-        $user->lastLoginBrowser = Arr::key($_SERVER, 'HTTP_USER_AGENT', 'Unknown browser/User agent');
+        $newToken = Generator::token($user->id);
 
-        #Generate new token for user
-        $user->lastLogInToken = $this->getNewToken();
+        # Create a new login claim
+        $update = $this->claims
+            ->add((new Claim())
+                ->setId(uniqid())
+                ->setToken($newToken)
+                ->setUserId($user->id)
+                ->setBrowser(General::browser())
+                ->setIPAddress(General::ipAddress())
+                ->setState(true)
+            );
 
-        #Check if the update was accepted or not
-        if ($update = $this->db->update($user)) {
-            #Save user.id to session
-            $_SESSION['user'] = $user->id;
+        # Check if the update was accepted or not
+        if ($update) {
+            # Save user.id to session
+            $this->cookie->addCookie('__user', $newToken, 0, '/');
         }
 
         return $update;
     }
 
-    /**
-     * Get IP Address
-     * @return string
-     */
-    public function getIPAddress(): string
-    {
-        if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
-            $ip = $_SERVER['HTTP_CLIENT_IP'];
-        } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
-            $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
-        } else {
-            $ip = $_SERVER['REMOTE_ADDR'];
-        }
-        return $ip;
-    }
-
-    private function getNewToken()
-    {
-        return strtoupper(uniqid() . uniqid() . uniqid() . uniqid() . uniqid());
-    }
 }

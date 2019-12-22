@@ -1,86 +1,199 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3a54eba3-a91c-4dc8-ad10-4d5bfb81813f" name="Default Changelist" comment="" />
+    <list default="true" id="f30006aa-4e4f-428f-aefb-63f8d34a5754" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/error.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/ripple.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/ancient-one.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/js/ripple.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hyper.config.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/LOG - 10 Dec_2019" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/log/LOG - 13 Dec_2019" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/hyper/Controllers/ApiController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/hyper/Controllers/BaseController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/hyper/Controllers/CRUDController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/hyper/Controllers/Controller.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/hyper/Exception/ConfigNotFoundException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/hyper/Exception/DatabaseConnectionException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/hyper/Exception/HyperError.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/hyper/Files/FileHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/hyper/Files/Folder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/hyper/Files/ImageHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/hyper/Functions/Logger.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/hyper/Http/Cookie.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/hyper/Http/Request.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/hyper/Http/StatusCode.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/hyper/Models/Claim.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/hyper/Models/Event.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/hyper/Models/Page.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/hyper/QueryBuilder/CompoundWords.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/hyper/QueryBuilder/KeyWords.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/hyper/QueryBuilder/Query.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/hyper/QueryBuilder/QueryManipulator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/hyper/QueryBuilder/QueryResult.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/hyper/SQL/SQLAttributes.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/hyper/SQL/SqlOperator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/hyper/Twig/TwigFilters.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/hyper/Twig/TwigFunctions.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/hyper/Utils/FormBuilder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/hyper/Utils/General.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/hyper/Utils/Generator.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/hyper/Utils/Html.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/hyper/Utils/HtmlFixer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vendor/hyper/Utils/UserBrowser.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Hyper Docs.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Hyper Docs.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/scopes/Hyper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontawesome/metadata/categories.yml" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fontawesome/metadata/categories.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fontawesome/metadata/icons.yml" beforeDir="false" afterPath="$PROJECT_DIR$/assets/fontawesome/metadata/icons.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/coderdocs-logo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/coderdocs-logo.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/features/appify-add-members.gif" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/features/appify-add-members.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/features/appify-theme-projects-overview-lg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/features/appify-theme-projects-overview-lg.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/docs.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/docs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/bootstrap/scss/_images.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/bootstrap/scss/_images.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/bootstrap/scss/_reboot.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/bootstrap/scss/_reboot.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/scss/bootstrap/scss/mixins/_image.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/bootstrap/scss/mixins/_image.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/DocsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/DocsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/ReflectionHelper.php" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/ReflectionHelper.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/license.txt" beforeDir="false" afterPath="$PROJECT_DIR$/license.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/Application/Authorization.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/hyper/Application/Authorization.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/Application/CRUDController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/Application/Controller.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/Application/ControllerFunctions.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/Application/Event.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/Application/HyperApp.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/hyper/Application/HyperApp.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/Application/HyperEventHook.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/hyper/Application/HyperEventHook.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/Application/MiddleWare.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/Application/Request.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/Database/CRUDQuery.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/hyper/Database/CRUDQuery.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/Database/Database.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/hyper/Database/Database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/Database/DatabaseConfig.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/hyper/Database/DatabaseConfig.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/Database/DatabaseContext.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/hyper/Database/DatabaseContext.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/Database/FileHandler.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/hyper/Database/FileHandler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/Database/FilterQuery.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/Database/ForeignObject.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/Database/ListQuery.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/Database/ObjectQuery.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/Database/Query.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/Database/SqlOperator.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/Exception/HyperException.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/hyper/Exception/HyperException.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/Exception/HyperHttpException.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/hyper/Exception/HyperHttpException.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/Functions/Arr.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/hyper/Functions/Arr.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/Functions/Cast.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/hyper/Functions/Cast.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/Functions/Debug.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/hyper/Functions/Debug.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/Functions/Obj.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/hyper/Functions/Obj.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/Functions/Str.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/hyper/Functions/Str.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/Functions/Validator.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/hyper/Functions/Validator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/Models/Pagination.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/hyper/Models/Pagination.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/hyper/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/Notifications/HttpMessage.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/hyper/Http/HttpMessage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/Notifications/MessageType.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/hyper/Http/HttpMessageType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/Routing/Route.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/hyper/Routing/Route.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/Routing/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/hyper/Routing/Router.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/SQL/Builder/BuilderException.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/SQL/Builder/BuilderInterface.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/SQL/Builder/GenericBuilder.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/SQL/Builder/MySqlBuilder.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/SQL/Builder/Syntax/AbstractBaseWriter.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/SQL/Builder/Syntax/AbstractSetWriter.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/SQL/Builder/Syntax/ColumnWriter.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/SQL/Builder/Syntax/DeleteWriter.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/SQL/Builder/Syntax/InsertWriter.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/SQL/Builder/Syntax/IntersectWriter.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/SQL/Builder/Syntax/MinusWriter.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/SQL/Builder/Syntax/PlaceholderWriter.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/SQL/Builder/Syntax/SelectWriter.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/SQL/Builder/Syntax/UnionAllWriter.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/SQL/Builder/Syntax/UnionWriter.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/SQL/Builder/Syntax/UpdateWriter.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/SQL/Builder/Syntax/WhereWriter.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/SQL/Builder/Syntax/WriterFactory.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/SQL/Manipulation/AbstractBaseQuery.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/SQL/Manipulation/AbstractCreationalQuery.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/SQL/Manipulation/AbstractSetQuery.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/SQL/Manipulation/ColumnQuery.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/SQL/Manipulation/Delete.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/SQL/Manipulation/Insert.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/SQL/Manipulation/Intersect.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/SQL/Manipulation/JoinQuery.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/SQL/Manipulation/Minus.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/SQL/Manipulation/QueryException.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/SQL/Manipulation/QueryFactory.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/SQL/Manipulation/QueryInterface.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/SQL/Manipulation/Select.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/SQL/Manipulation/Union.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/SQL/Manipulation/UnionAll.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/SQL/Manipulation/Update.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/SQL/Query.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/SQL/QueryBuilder.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/SQL/SQLArithmeticOperator.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/SQL/SQLComparisonOperator.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/SQL/SQLLogicalOperator.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/SQL/SQLType.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/SQL/Syntax/Column.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/SQL/Syntax/OrderBy.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/SQL/Syntax/QueryPartInterface.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/SQL/Syntax/SyntaxFactory.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/SQL/Syntax/Table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/hyper/SQL/Syntax/Where.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/docs/installation/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/views/docs/installation/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/docs/introduction/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/views/docs/introduction/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/docs/package.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/views/docs/package.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/home/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/views/home/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/shared/docsLayout.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/views/shared/docsLayout.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/shared/error.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/views/shared/error.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/shared/layout.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/views/shared/layout.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/shared/side-bar.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/views/shared/side-bar.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web.hyper.json" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
-    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+  <component name="ComposerSettings" doNotAsk="true">
     <execution>
       <executable path="composer" />
     </execution>
   </component>
-  <component name="DatabaseView">
-    <option name="SHOW_INTERMEDIATE" value="true" />
-    <option name="GROUP_DATA_SOURCES" value="true" />
-    <option name="GROUP_SCHEMA" value="true" />
-    <option name="GROUP_CONTENTS" value="false" />
-    <option name="SORT_POSITIONED" value="false" />
-    <option name="SHOW_EMPTY_GROUPS" value="false" />
-    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-    <option name="HIDDEN_KINDS">
-      <set />
-    </option>
-    <expand />
-    <select />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="NamedScopeManager">
-    <order>
-      <scope name="Hyper" />
-    </order>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.3" />
+  <component name="ProjectId" id="1UmPady9vgi9nBG11hwyl85Ly8s" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.3">
-    <include_path>
-      <path value="$PROJECT_DIR$/vendor/hyper/Routing" />
-      <path value="$PROJECT_DIR$/vendor/hyper/Notifications" />
-      <path value="$PROJECT_DIR$/vendor/twig/twig" />
-      <path value="$PROJECT_DIR$/vendor/hyper/Database" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
-      <path value="$PROJECT_DIR$/vendor/hyper/Reflection" />
-      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
-      <path value="$PROJECT_DIR$/vendor/hyper/Exception" />
-      <path value="$PROJECT_DIR$/vendor/hyper/Functions" />
-      <path value="$PROJECT_DIR$/vendor/composer" />
-      <path value="$PROJECT_DIR$/vendor/hyper/Application" />
-      <path value="$PROJECT_DIR$/vendor/hyper/Models" />
-      <path value="$PROJECT_DIR$/vendor/funcphp/twig-compress" />
-      <path value="$PROJECT_DIR$/vendor/hyper/SQL" />
-      <path value="$PROJECT_DIR$/vendor/hyper/Builder" />
-      <path value="$PROJECT_DIR$/vendor/hyper/Manipulation" />
-      <path value="$PROJECT_DIR$/vendor/hyper/Syntax" />
-    </include_path>
-  </component>
-  <component name="ProjectId" id="1TJyLvh9ODn2MFcaJ3AooeczfCl" />
   <component name="PropertiesComponent">
-    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.jetbrains.php.lang.actions.generation.PhpGenerateFieldAccessorHandlerBase$MyMemberChooser.fluent.setters.last.selected" value="true" />
-    <property name="com.jetbrains.php.phpunit.codeGeneration.PhpNewTestDialog.defaultLibrary" value="PHPUnit" />
-    <property name="dumpAutoload C:/Users/joe/PhpstormProjects/Hyper Dcs/composer.json" value="--no-interaction --ansi --verbose" />
     <property name="dumpAutoload C:/Users/joe/PhpstormProjects/Hyper Docs/composer.json" value="--no-interaction --ansi --verbose --optimize" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/vendor/hyper" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../car-rental" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="project.scopes" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\joe\PhpstormProjects\Hyper Docs\vendor\hyper\SQL" />
-      <recent name="C:\Users\joe\PhpstormProjects\Hyper Docs\views\docs" />
-      <recent name="C:\Users\joe\PhpstormProjects\Hyper Docs\views\home" />
-      <recent name="C:\Users\joe\PhpstormProjects\Hyper Docs\assets\images" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\joe\PhpstormProjects\Hyper Docs\vendor\hyper" />
-      <recent name="C:\Users\joe\PhpstormProjects\Hyper Docs\views\shared" />
-      <recent name="C:\Users\joe\PhpstormProjects\Hyper Docs\controllers" />
-      <recent name="C:\Users\joe\PhpstormProjects\Hyper Docs" />
-      <recent name="C:\Users\joe\PhpstormProjects\Hyper Dcs\vendor" />
+      <recent name="C:\Users\joe\PhpstormProjects\Hyper Docs\assets\css" />
+      <recent name="C:\Users\joe\PhpstormProjects\Hyper Docs\assets\js" />
+      <recent name="C:\Users\joe\PhpstormProjects\Hyper Docs\assets" />
+      <recent name="C:\Users\joe\PhpstormProjects\Hyper Docs\vendor\hyper\Models" />
+      <recent name="C:\Users\joe\PhpstormProjects\Hyper Docs\vendor\hyper\Http" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -95,60 +208,47 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="PHP Built-in Web Server.Run">
-    <configuration name="QueryTest.testGetQuery" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Hyper\SQL\QueryTest" file="$PROJECT_DIR$/vendor/hyper/SQL/QueryTest.php" method="testGetQuery" scope="Method" />
+  <component name="RunManager">
+    <configuration name="Webserver" type="PhpBuiltInWebServerConfigurationType" factoryName="PHP Built-in Web Server" document_root="$PROJECT_DIR$" port="3000">
       <method v="2" />
     </configuration>
-    <configuration name="QueryTest.test__construct" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Hyper\SQL\QueryTest" file="$PROJECT_DIR$/vendor/hyper/SQL/QueryTest.php" method="test__construct" scope="Method" />
-      <method v="2" />
-    </configuration>
-    <configuration name="QueryTest.test__toString" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Hyper\SQL\QueryTest" file="$PROJECT_DIR$/vendor/hyper/SQL/QueryTest.php" method="test__toString" scope="Method" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Run" type="PhpBuiltInWebServerConfigurationType" factoryName="PHP Built-in Web Server" document_root="$PROJECT_DIR$" port="3000">
-      <method v="2" />
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="PHPUnit.QueryTest.test__construct" />
-        <item itemvalue="PHPUnit.QueryTest.test__toString" />
-        <item itemvalue="PHPUnit.QueryTest.testGetQuery" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="3a54eba3-a91c-4dc8-ad10-4d5bfb81813f" name="Default Changelist" comment="" />
-      <created>1573192440167</created>
+      <changelist id="f30006aa-4e4f-428f-aefb-63f8d34a5754" name="Default Changelist" comment="" />
+      <created>1575958861979</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1573192440167</updated>
-      <workItem from="1573192441369" duration="1043000" />
-      <workItem from="1573200122375" duration="15068000" />
-      <workItem from="1573222189603" duration="4875000" />
-      <workItem from="1573270383612" duration="5317000" />
-      <workItem from="1573295573972" duration="378000" />
-      <workItem from="1573297653522" duration="17508000" />
-      <workItem from="1573315255297" duration="34000" />
-      <workItem from="1573315318019" duration="9710000" />
-      <workItem from="1573367227080" duration="2508000" />
-      <workItem from="1573379941414" duration="3166000" />
-      <workItem from="1573398787531" duration="18238000" />
-      <workItem from="1573418824141" duration="2781000" />
-      <workItem from="1573421650271" duration="2358000" />
-      <workItem from="1573449224971" duration="1672000" />
-      <workItem from="1573460444418" duration="4457000" />
-      <workItem from="1573469251167" duration="810000" />
+      <updated>1575958861979</updated>
+      <workItem from="1575958866120" duration="1746000" />
+      <workItem from="1575966372095" duration="1460000" />
+      <workItem from="1575997697548" duration="2151000" />
+      <workItem from="1576006680367" duration="95000" />
+      <workItem from="1576258157297" duration="13702000" />
+      <workItem from="1576517737842" duration="22000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

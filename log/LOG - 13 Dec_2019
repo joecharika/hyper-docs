@@ -1,0 +1,57 @@
+====================[ ERROR @ 07:27:02pm ]====================
+    500: <small><i>A hyper unrelated error occurred, and all we know is this:</i></small> <br> Class 'Hyper\Application\Request' not found
+    
+    ## Stacktrace      ::########################################################
+        #0 C:\Users\joe\PhpstormProjects\Hyper Docs\vendor\hyper\Application\HyperEventHook.php(62): Hyper\Application\HyperEventHook->Hyper\Application\{closure}(Object(Hyper\Models\Event))
+#1 [internal function]: Hyper\Application\HyperEventHook->Hyper\Application\{closure}(Object(Error))
+#2 {main}
+    ## EndStacktrace   ::########################################################
+
+====================[ ERROR @ 09:32:23pm ]====================
+    404: Controller <span style='color: red'>( \Controllers\DodsdsController )</span> not found
+    
+    ## Stacktrace      ::########################################################
+        #0 C:\Users\joe\PhpstormProjects\Hyper Docs\vendor\hyper\Exception\HyperHttpException.php(13): Hyper\Exception\HyperHttpException::get('Controller <spa...', '404')
+#1 C:\Users\joe\PhpstormProjects\Hyper Docs\vendor\hyper\Application\HyperApp.php(271): Hyper\Exception\HyperHttpException::notFound('Controller <spa...')
+#2 C:\Users\joe\PhpstormProjects\Hyper Docs\vendor\hyper\Application\HyperApp.php(223): Hyper\Application\HyperApp->web(Object(Hyper\Routing\Route))
+#3 C:\Users\joe\PhpstormProjects\Hyper Docs\vendor\hyper\Application\HyperApp.php(117): Hyper\Application\HyperApp->run()
+#4 C:\Users\joe\PhpstormProjects\Hyper Docs\index.php(18): Hyper\Application\HyperApp->__construct('Hyper Docs', false, Object(Hyper\Application\HyperEventHook))
+#5 {main}
+    ## EndStacktrace   ::########################################################
+
+====================[ ERROR @ 09:35:51pm ]====================
+    404: Controller <span style='color: red'>( \Controllers\DodsdsController )</span> not found
+    
+    ## Stacktrace      ::########################################################
+        #0 C:\Users\joe\PhpstormProjects\Hyper Docs\vendor\hyper\Exception\HyperHttpException.php(13): Hyper\Exception\HyperHttpException::get('Controller <spa...', '404')
+#1 C:\Users\joe\PhpstormProjects\Hyper Docs\vendor\hyper\Application\HyperApp.php(271): Hyper\Exception\HyperHttpException::notFound('Controller <spa...')
+#2 C:\Users\joe\PhpstormProjects\Hyper Docs\vendor\hyper\Application\HyperApp.php(223): Hyper\Application\HyperApp->web(Object(Hyper\Routing\Route))
+#3 C:\Users\joe\PhpstormProjects\Hyper Docs\vendor\hyper\Application\HyperApp.php(117): Hyper\Application\HyperApp->run()
+#4 C:\Users\joe\PhpstormProjects\Hyper Docs\index.php(18): Hyper\Application\HyperApp->__construct('Hyper Docs', false, Object(Hyper\Application\HyperEventHook))
+#5 {main}
+    ## EndStacktrace   ::########################################################
+
+====================[ ERROR @ 09:36:49pm ]====================
+    404: Controller <span style='color: red'>( \Controllers\DodsdsController )</span> not found
+    
+    ## Stacktrace      ::########################################################
+        #0 C:\Users\joe\PhpstormProjects\Hyper Docs\vendor\hyper\Exception\HyperHttpException.php(13): Hyper\Exception\HyperHttpException::get('Controller <spa...', '404')
+#1 C:\Users\joe\PhpstormProjects\Hyper Docs\vendor\hyper\Application\HyperApp.php(271): Hyper\Exception\HyperHttpException::notFound('Controller <spa...')
+#2 C:\Users\joe\PhpstormProjects\Hyper Docs\vendor\hyper\Application\HyperApp.php(223): Hyper\Application\HyperApp->web(Object(Hyper\Routing\Route))
+#3 C:\Users\joe\PhpstormProjects\Hyper Docs\vendor\hyper\Application\HyperApp.php(117): Hyper\Application\HyperApp->run()
+#4 C:\Users\joe\PhpstormProjects\Hyper Docs\index.php(18): Hyper\Application\HyperApp->__construct('Hyper Docs', false, Object(Hyper\Application\HyperEventHook))
+#5 {main}
+    ## EndStacktrace   ::########################################################
+
+====================[ ERROR @ 09:36:58pm ]====================
+    404: Controller <span style='color: red'>( \Controllers\DodsdsController )</span> not found
+    
+    ## Stacktrace      ::########################################################
+        #0 C:\Users\joe\PhpstormProjects\Hyper Docs\vendor\hyper\Exception\HyperHttpException.php(13): Hyper\Exception\HyperHttpException::get('Controller <spa...', '404')
+#1 C:\Users\joe\PhpstormProjects\Hyper Docs\vendor\hyper\Application\HyperApp.php(271): Hyper\Exception\HyperHttpException::notFound('Controller <spa...')
+#2 C:\Users\joe\PhpstormProjects\Hyper Docs\vendor\hyper\Application\HyperApp.php(223): Hyper\Application\HyperApp->web(Object(Hyper\Routing\Route))
+#3 C:\Users\joe\PhpstormProjects\Hyper Docs\vendor\hyper\Application\HyperApp.php(117): Hyper\Application\HyperApp->run()
+#4 C:\Users\joe\PhpstormProjects\Hyper Docs\index.php(18): Hyper\Application\HyperApp->__construct('Hyper Docs', false, Object(Hyper\Application\HyperEventHook))
+#5 {main}
+    ## EndStacktrace   ::########################################################
+

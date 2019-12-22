@@ -9,7 +9,11 @@ namespace Hyper\Models;
 
 
 use Hyper\Application\Authorization;
+use Hyper\Database\DatabaseContext;
 use Hyper\Functions\Obj;
+use Hyper\Http\Cookie;
+use Hyper\SQL\SQLType;
+use function is_null;
 
 /**
  * Class User
@@ -32,40 +36,36 @@ class User
      */
     public $username;
 
-    public $name;
+    public $name, $lastName, $otherNames,
+        $phone, $email, $notes,
+        $role, $key, $salt, $lockedOut = false,
+        $isEmailVerified, $isPhoneVerified;
 
-    public $lastName;
-    public $otherNames;
     /**
      * @var string
-     * @isFile
+     * @File
      * @UploadAs File
      * @required
      */
     public $image;
-    public $phone;
-    public $email;
-    public $notes;
-    public $role;
-    public $key;
-    public $salt;
-    public $lockedOut;
-    public $lastLogInToken;
-    public $isLoggedIn;
-    public $lastLoginBrowser;
-    public $lastLoginDate;
-    public $lastLoginIP;
-    public $isEmailVerified;
-    public $isPhoneVerified;
+
 
     public function __construct($username = null)
     {
-        $this->username = $username;
+        if (isset($username))
+            $this->username = $username;
     }
 
-    public static function isAuthenticated()
+    public static function isAuthenticated(): bool
     {
-        return !is_null((new Authorization)->user);
+        $token = (new Cookie())->getCookie('__user');
+
+        return empty($token)
+            ? false
+            : !is_null(
+                (new DatabaseContext('claim'))
+                    ->first('token', $token)
+            );
     }
 
     public static function isInRole($role)
@@ -80,7 +80,7 @@ class User
 
     public static function getRole()
     {
-        return Obj::property((new Authorization)->getSession()->user, 'role');
+        return Obj::property((new Authorization)->getSession()->user, 'role', 'visitor');
     }
 
     public static function getId()
@@ -90,6 +90,6 @@ class User
 
     public function __toString()
     {
-        return $this->name . ' ' . $this->otherNames . ' ' . $this->lastName;
+        return "$this->name $this->otherNames $this->lastName";
     }
 }

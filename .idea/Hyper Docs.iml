@@ -6,9 +6,6 @@
       <sourceFolder url="file://$MODULE_DIR$/vendor/hyper" isTestSource="false" packagePrefix="Hyper\" />
       <sourceFolder url="file://$MODULE_DIR$/controllers" isTestSource="false" packagePrefix="Controllers\" />
       <sourceFolder url="file://$MODULE_DIR$/models" isTestSource="false" packagePrefix="Models\" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/hyper/Builder" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/hyper/Manipulation" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/hyper/Syntax" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

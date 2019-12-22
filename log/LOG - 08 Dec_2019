@@ -1,0 +1,81 @@
+====================[ ERROR @ 07:05:58pm ]====================
+    500: <small><i>A hyper unrelated error occurred, and all we know is this:</i></small> <br> Argument 3 passed to Hyper\Application\HyperApp::__construct() must be an instance of Hyper\Application\HyperEventHook or null, bool given, called in C:\Users\joe\PhpstormProjects\Hyper Docs\index.php on line 19
+    
+    ## Stacktrace      ::########################################################
+        #0 C:\Users\joe\PhpstormProjects\Hyper Docs\vendor\hyper\Application\HyperEventHook.php(61): Hyper\Application\HyperEventHook->Hyper\Application\{closure}(Object(Hyper\Application\Event))
+#1 [internal function]: Hyper\Application\HyperEventHook->Hyper\Application\{closure}(Object(TypeError))
+#2 {main}
+    ## EndStacktrace   ::########################################################
+
+====================[ ERROR @ 07:19:00pm ]====================
+    500: <small><i>A hyper unrelated error occurred, and all we know is this:</i></small> <br> Argument 3 passed to Hyper\Application\HyperApp::__construct() must be an instance of Hyper\Application\HyperEventHook or null, bool given, called in C:\Users\joe\PhpstormProjects\Hyper Docs\index.php on line 19
+    
+    ## Stacktrace      ::########################################################
+        #0 C:\Users\joe\PhpstormProjects\Hyper Docs\vendor\hyper\Application\HyperEventHook.php(61): Hyper\Application\HyperEventHook->Hyper\Application\{closure}(Object(Hyper\Application\Event))
+#1 [internal function]: Hyper\Application\HyperEventHook->Hyper\Application\{closure}(Object(TypeError))
+#2 {main}
+    ## EndStacktrace   ::########################################################
+
+====================[ ERROR @ 07:19:34pm ]====================
+    500: <small><i>A hyper unrelated error occurred, and all we know is this:</i></small> <br> Argument 3 passed to Hyper\Application\HyperApp::__construct() must be an instance of Hyper\Application\HyperEventHook or null, bool given, called in C:\Users\joe\PhpstormProjects\Hyper Docs\index.php on line 19
+    
+    ## Stacktrace      ::########################################################
+        #0 C:\Users\joe\PhpstormProjects\Hyper Docs\vendor\hyper\Application\HyperEventHook.php(61): Hyper\Application\HyperEventHook->Hyper\Application\{closure}(Object(Hyper\Application\Event))
+#1 [internal function]: Hyper\Application\HyperEventHook->Hyper\Application\{closure}(Object(TypeError))
+#2 {main}
+    ## EndStacktrace   ::########################################################
+
+====================[ ERROR @ 07:20:24pm ]====================
+    500: <small><i>A hyper unrelated error occurred, and all we know is this:</i></small> <br> Class 'Hyper\Application\Controller' not found
+    
+    ## Stacktrace      ::########################################################
+        #0 C:\Users\joe\PhpstormProjects\Hyper Docs\vendor\hyper\Application\HyperEventHook.php(61): Hyper\Application\HyperEventHook->Hyper\Application\{closure}(Object(Hyper\Application\Event))
+#1 [internal function]: Hyper\Application\HyperEventHook->Hyper\Application\{closure}(Object(Error))
+#2 {main}
+    ## EndStacktrace   ::########################################################
+
+====================[ ERROR @ 07:20:54pm ]====================
+    500: <small><i>A hyper unrelated error occurred, and all we know is this:</i></small> <br> Class 'Hyper\Application\Controller' not found
+    
+    ## Stacktrace      ::########################################################
+        #0 C:\Users\joe\PhpstormProjects\Hyper Docs\vendor\hyper\Application\HyperEventHook.php(61): Hyper\Application\HyperEventHook->Hyper\Application\{closure}(Object(Hyper\Application\Event))
+#1 [internal function]: Hyper\Application\HyperEventHook->Hyper\Application\{closure}(Object(Error))
+#2 {main}
+    ## EndStacktrace   ::########################################################
+
+====================[ ERROR @ 07:22:40pm ]====================
+    500: <small><i>A hyper unrelated error occurred, and all we know is this:</i></small> <br> Class 'Hyper\Application\Controller' not found
+    
+    ## Stacktrace      ::########################################################
+        #0 C:\Users\joe\PhpstormProjects\Hyper Docs\vendor\hyper\Application\HyperEventHook.php(61): Hyper\Application\HyperEventHook->Hyper\Application\{closure}(Object(Hyper\Application\Event))
+#1 [internal function]: Hyper\Application\HyperEventHook->Hyper\Application\{closure}(Object(Error))
+#2 {main}
+    ## EndStacktrace   ::########################################################
+
+====================[ ERROR @ 07:32:40pm ]====================
+    500: <small><i>A hyper unrelated error occurred, and all we know is this:</i></small> <br> Class 'Hyper\Application\Controller' not found
+    
+    ## Stacktrace      ::########################################################
+        #0 C:\Users\joe\PhpstormProjects\Hyper Docs\vendor\hyper\Application\HyperEventHook.php(61): Hyper\Application\HyperEventHook->Hyper\Application\{closure}(Object(Hyper\Application\Event))
+#1 [internal function]: Hyper\Application\HyperEventHook->Hyper\Application\{closure}(Object(Error))
+#2 {main}
+    ## EndStacktrace   ::########################################################
+
+====================[ ERROR @ 07:33:18pm ]====================
+    500: <small><i>A hyper unrelated error occurred, and all we know is this:</i></small> <br> Class 'Hyper\Application\Controller' not found
+    
+    ## Stacktrace      ::########################################################
+        #0 C:\Users\joe\PhpstormProjects\Hyper Docs\vendor\hyper\Application\HyperEventHook.php(61): Hyper\Application\HyperEventHook->Hyper\Application\{closure}(Object(Hyper\Application\Event))
+#1 [internal function]: Hyper\Application\HyperEventHook->Hyper\Application\{closure}(Object(Error))
+#2 {main}
+    ## EndStacktrace   ::########################################################
+
+====================[ ERROR @ 07:33:46pm ]====================
+    500: <small><i>A hyper unrelated error occurred, and all we know is this:</i></small> <br> Class 'Hyper\Application\Controller' not found
+    
+    ## Stacktrace      ::########################################################
+        #0 C:\Users\joe\PhpstormProjects\Hyper Docs\vendor\hyper\Application\HyperEventHook.php(61): Hyper\Application\HyperEventHook->Hyper\Application\{closure}(Object(Hyper\Application\Event))
+#1 [internal function]: Hyper\Application\HyperEventHook->Hyper\Application\{closure}(Object(Error))
+#2 {main}
+    ## EndStacktrace   ::########################################################
+

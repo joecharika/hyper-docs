@@ -10,16 +10,29 @@
 
 {% block body %}
     <article class="docs-article" id="{{ package.name|lower }}">
-        <h2 class="section-heading">{{ package.name }} Package ({{ package.classes|length }})</h2>
+        <h2 class="section-heading">{{ package.name }} Package</h2>
         <p>{{ package.description }}</p>
+        {% if package.packages %}
+            <small>Packages ({{ package.packages|length }})</small>
+            <section class="docs-section mb-3" id="packages">
+                {% for key,subPackage in package.packages %}
+                    <a href="/docs/api/{{ package.name }}/{{ subPackage }}">
+                        <h4>
+                            <code>{{ key+1 }}. \Hyper\{{ package.name }}\{{ subPackage }}</code>
+                        </h4>
+                    </a>
+                {% endfor %}
+            </section>
+        {% endif %}
+        <small>Classes\Interfaces\Traits ({{ package.classes|length }})</small>
         {% for key, class in package.classes %}
             <section class="docs-section" id="{{ key + 1 }}">
-                <h3>
+                <h4>
                     <code>{{ key + 1 }}. {{ class.name }}</code>
                     {% if class.deprecated %}
                         <span class="badge badge-warning text-uppercase mx-1">deprecated</span>
                     {% endif %}
-                </h3>
+                </h4>
 
                 <p>{{ class.description|raw }}</p>
 
