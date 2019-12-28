@@ -8,6 +8,9 @@
 </li>
 
 {% for package in packages %}
-    <li class="nav-item"><a class="nav-link {{ package|lower == model.name|lower ? 'active' : '' }}"
-                            href="/docs/api/{{ package|lower }}">{{ package }}</a></li>
+    <li class="nav-item">
+        <a class="nav-link {{ package|lower == model.name|lower ? 'active' : '' }}" href="/docs/api/{{ package }}">
+            {{ package }}
+        </a>
+    </li>
 {% endfor %}

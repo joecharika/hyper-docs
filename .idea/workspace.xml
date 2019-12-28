@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f30006aa-4e4f-428f-aefb-63f8d34a5754" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/log/LAST_REQUEST_QUERY" beforeDir="false" afterPath="$PROJECT_DIR$/log/LAST_REQUEST_QUERY" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/docs/introduction/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/views/docs/introduction/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/includes/api-menu.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/views/includes/api-menu.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -80,7 +79,16 @@
       <workItem from="1576258157297" duration="13702000" />
       <workItem from="1576517737842" duration="22000" />
       <workItem from="1577480804101" duration="1097000" />
+      <workItem from="1577521164496" duration="842000" />
     </task>
+    <task id="LOCAL-00001" summary="Fixed package reference">
+      <created>1577521297994</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1577521297994</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -101,5 +109,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Fixed package reference" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed package reference" />
   </component>
 </project>
